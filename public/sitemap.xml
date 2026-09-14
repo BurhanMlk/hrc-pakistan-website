@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.org/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.example.org/about/who-we-are</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/about/mission-vision</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/about/objectives</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/about/core-values</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/about/history</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/about/organizational-structure</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/leadership</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/campaigns</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/events</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/news</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/publications</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/get-involved/membership</loc><priority>0.7</priority></url>
+  <url><loc>https://www.example.org/get-involved/volunteer</loc><priority>0.7</priority></url>
+  <url><loc>https://www.example.org/get-involved/training</loc><priority>0.7</priority></url>
+  <url><loc>https://www.example.org/get-involved/partnerships</loc><priority>0.7</priority></url>
+  <url><loc>https://www.example.org/awards</loc><priority>0.7</priority></url>
+  <url><loc>https://www.example.org/gallery/photos</loc><priority>0.6</priority></url>
+  <url><loc>https://www.example.org/gallery/videos</loc><priority>0.6</priority></url>
+  <url><loc>https://www.example.org/gallery/events</loc><priority>0.6</priority></url>
+  <url><loc>https://www.example.org/impact</loc><priority>0.7</priority></url>
+  <url><loc>https://www.example.org/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/report-a-concern</loc><priority>0.9</priority></url>
+  <url><loc>https://www.example.org/track-complaint</loc><priority>0.8</priority></url>
+  <url><loc>https://www.example.org/search</loc><priority>0.5</priority></url>
+  <url><loc>https://www.example.org/privacy-policy</loc><priority>0.3</priority></url>
+  <url><loc>https://www.example.org/terms-of-use</loc><priority>0.3</priority></url>
+  <url><loc>https://www.example.org/data-protection</loc><priority>0.3</priority></url>
+</urlset>

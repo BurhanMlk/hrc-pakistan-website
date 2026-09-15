@@ -14,37 +14,54 @@ export default function Footer() {
     { key: 'linkedin', icon: Linkedin, href: social.linkedin },
     { key: 'youtube', icon: Youtube, href: social.youtube },
     { key: 'instagram', icon: Instagram, href: social.instagram },
-  ].filter((s) => s.href);
+  ];
 
   return (
     <footer className="bg-navy-950 text-navy-200">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent-500 font-serif text-lg font-bold text-white">H</span>
+          <div className="flex items-center gap-3">
+            <img
+              src="/HRCP LOGO.png"
+              alt={settings.organizationName || 'Human Rights Council of Pakistan'}
+              className="h-12 w-auto rounded-md bg-white object-contain p-0.5"
+            />
             <span className="font-bold text-white">{settings.organizationShortName || 'HRC Twin City'}</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-navy-300">
             {(settings.footer && settings.footer.description) ||
               'Working for the protection and promotion of human rights, justice, peace, equality and dignity across the Twin Cities.'}
           </p>
-          {socialLinks.length > 0 && (
-            <div className="mt-5 flex gap-3">
-              {socialLinks.map((s) => (
+          <div className="mt-5 flex gap-3">
+            {socialLinks.map((s) => {
+              if (!s.href) {
+                return (
+                  <span
+                    key={s.key}
+                    aria-label={s.key}
+                    title={`${s.key} (add link in Admin → Settings)`}
+                    className="cursor-default rounded-md bg-navy-900 p-2 text-navy-500"
+                  >
+                    <s.icon className="h-4 w-4" />
+                  </span>
+                );
+              }
+              return (
                 <a
                   key={s.key}
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.key}
+                  title={s.key}
                   className="rounded-md bg-navy-900 p-2 text-navy-300 hover:bg-navy-800 hover:text-white"
                 >
                   <s.icon className="h-4 w-4" />
                 </a>
-              ))}
-            </div>
-          )}
+              );
+            })}
+          </div>
         </div>
 
         {/* Quick links */}

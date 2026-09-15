@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { MessageSquare, X, Send, Mic, MicOff, Scale } from 'lucide-react';
+import { MessageSquare, X, Send, Mic, MicOff } from 'lucide-react';
 import { publicApi } from '../services/publicApi.js';
 
 const DISCLAIMER =
@@ -12,7 +12,7 @@ export default function AIAssistant() {
     {
       role: 'assistant',
       content:
-        'Hello! I am the HRC Twin City assistant. I can help you navigate this website, learn about human rights, and guide you on reporting concerns, membership, volunteering, events and publications. How can I help?',
+        'Hello! I am the HRC-Pakistan assistant. I can help you navigate this website, learn about human rights, and guide you on reporting concerns, membership, volunteering, events and publications. How can I help?',
     },
   ]);
   const [input, setInput] = useState('');
@@ -88,9 +88,9 @@ export default function AIAssistant() {
           {/* Header */}
           <div className="flex items-center justify-between bg-navy-900 px-4 py-3 text-white">
             <div className="flex items-center gap-2">
-              <Scale className="h-5 w-5 text-accent-400" />
+              <img src="/HRCP LOGO.png" alt="HRC-Pakistan logo" className="h-9 w-9 rounded bg-white object-contain p-0.5" />
               <div>
-                <p className="text-sm font-bold">HRC Assistant</p>
+                <p className="text-sm font-bold">HRC-Pakistan Assistant</p>
                 <p className="text-[10px] text-navy-300">Informational guidance only</p>
               </div>
             </div>

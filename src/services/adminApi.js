@@ -68,6 +68,7 @@ export const adminApi = {
   addComplaintNote: (id, data) => api.post(`/complaints/${id}/notes`, data),
   addInvestigationUpdate: (id, data) => postForm(`/complaints/${id}/investigation`, data),
   closeComplaint: (id) => api.patch(`/complaints/${id}/close`),
+  deleteComplaint: (id) => api.delete(`/complaints/${id}`),
 
   // Events
   events: (params) => api.get('/events', { params }),

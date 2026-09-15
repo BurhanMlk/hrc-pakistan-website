@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, X, AlertTriangle } from 'lucide-react';
+import { ChevronDown, Menu, X, AlertTriangle, Search } from 'lucide-react';
 import { navItems } from '../../config/navigation.js';
 import { useSettings } from '../../context/SettingsContext.jsx';
 import { cn } from '../../utils/helpers.js';
@@ -171,6 +171,9 @@ export default function Navbar() {
             <Link to="/report-a-concern" className="hidden items-center gap-1.5 whitespace-nowrap rounded-md bg-accent-500 px-3 py-2 text-sm font-semibold text-white hover:bg-accent-600 sm:inline-flex">
               <AlertTriangle className="h-4 w-4" /> Report a Concern
             </Link>
+            <Link to="/track-complaint" className="hidden items-center gap-1.5 whitespace-nowrap rounded-md border border-white/30 px-3 py-2 text-sm font-semibold text-white hover:bg-navy-800 lg:inline-flex">
+              <Search className="h-4 w-4" /> Track Complaint
+            </Link>
             <Link to="/get-involved/membership" className="hidden whitespace-nowrap rounded-md border border-white/30 px-3 py-2 text-sm font-semibold text-white hover:bg-navy-800 md:inline-flex">
               Join Us
             </Link>
@@ -204,6 +207,13 @@ export default function Navbar() {
               <div className="space-y-2 p-4">
                 <Link to="/report-a-concern" onClick={() => setMobileOpen(false)} className="btn-accent w-full">
                   <AlertTriangle className="h-4 w-4" /> Report a Concern
+                </Link>
+                <Link
+                  to="/track-complaint"
+                  onClick={() => setMobileOpen(false)}
+                  className="btn w-full border border-white/30 bg-transparent text-white hover:bg-navy-800"
+                >
+                  <Search className="h-4 w-4" /> Track Complaint
                 </Link>
                 <Link
                   to="/get-involved/membership"

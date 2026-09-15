@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Trash2 } from 'lucide-react';
 import { StatusBadge, SearchBar, Pagination, ErrorState, Card } from '../../components/ui/index.jsx';
 import DataTable from '../../components/ui/DataTable.jsx';
+import { ConfirmDialog } from '../../components/ui/Modal.jsx';
 import { adminApi } from '../../services/adminApi.js';
+import { useToast } from '../../context/ToastContext.jsx';
 import { getApiError } from '../../services/api.js';
 import { COMPLAINT_STATUSES, COMPLAINT_CATEGORIES, COMPLAINT_PRIORITIES } from '../../config/constants.js';
 import { formatDate } from '../../utils/helpers.js';
 
 export default function ComplaintsAdminPage() {
   const navigate = useNavigate();
+  const toast = useToast();
   const [rows, setRows] = useState([]);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
@@ -19,6 +23,8 @@ export default function ComplaintsAdminPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [stats, setStats] = useState(null);
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleteLoading, setDeleteLoading] = useState(false);
 
   const load = async () => {
     setLoading(true);
@@ -49,6 +55,20 @@ export default function ComplaintsAdminPage() {
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, status, priority, incidentType, search]);
+
+  const doDelete = async () => {
+    setDeleteLoading(true);
+    try {
+      await adminApi.deleteComplaint(deleteTarget._id);
+      toast.success('Complaint deleted.');
+      setDeleteTarget(null);
+      load();
+    } catch (err) {
+      toast.error(getApiError(err));
+    } finally {
+      setDeleteLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -107,12 +127,34 @@ export default function ComplaintsAdminPage() {
               { key: 'status', header: 'Status', render: (r) => <StatusBadge status={r.status} /> },
               { key: 'priority', header: 'Priority', render: (r) => <StatusBadge status={r.priority} /> },
               { key: 'createdAt', header: 'Submitted', render: (r) => formatDate(r.createdAt) },
+              {
+                key: 'actions',
+                header: 'Actions',
+                render: (r) => (
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setDeleteTarget(r); }}
+                    className="rounded p-1.5 text-red-500 hover:bg-red-50"
+                    aria-label="Delete"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                ),
+              },
             ]}
             emptyMessage="No complaints found."
           />
           <Pagination page={page} pages={pages} onChange={setPage} />
         </>
       )}
+
+      <ConfirmDialog
+        open={!!deleteTarget}
+        onClose={() => setDeleteTarget(null)}
+        onConfirm={doDelete}
+        loading={deleteLoading}
+        title="Delete complaint?"
+        message={`This will permanently delete complaint "${deleteTarget?.complaintId || ''}" and all its updates. This action cannot be undone.`}
+      />
     </div>
   );
 }

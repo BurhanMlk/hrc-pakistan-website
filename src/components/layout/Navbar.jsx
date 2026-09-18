@@ -136,7 +136,7 @@ export default function Navbar() {
         <div className="mx-auto flex min-h-16 w-full max-w-[1600px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex shrink-0 items-center" aria-label="Home">
             <img
-              src="/HRCP LOGO.png"
+              src="/twin city logo.jpeg"
               alt="Human Rights Council of Pakistan"
               className="h-11 w-auto rounded-md bg-white object-contain p-0.5"
             />

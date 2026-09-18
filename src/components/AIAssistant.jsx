@@ -88,7 +88,7 @@ export default function AIAssistant() {
           {/* Header */}
           <div className="flex items-center justify-between bg-navy-900 px-4 py-3 text-white">
             <div className="flex items-center gap-2">
-              <img src="/HRCP LOGO.png" alt="HRC-Pakistan logo" className="h-9 w-9 rounded bg-white object-contain p-0.5" />
+              <img src="/twin city logo.jpeg" alt="HRC-Pakistan logo" className="h-9 w-9 rounded bg-white object-contain p-0.5" />
               <div>
                 <p className="text-sm font-bold">HRC-Pakistan Assistant</p>
                 <p className="text-[10px] text-navy-300">Informational guidance only</p>

@@ -123,6 +123,60 @@ export default function HomePage() {
     <>
       <Hero />
 
+      {/* Chairman message */}
+      <section className="section-pad bg-white">
+        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
+          {/* Picture (left) */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
+          >
+            <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-navy-100 bg-navy-50/50 p-2 shadow-soft">
+              <img
+                src="/Chairman%20HRC-P%20pic.jpeg"
+                alt="Mr. Jamshed Hussain — Chairman, Human Rights Council of Pakistan (HRC-P)"
+                className="h-auto w-full rounded-xl object-cover"
+              />
+            </div>
+            <div className="mt-5 text-center">
+              <p className="text-2xl font-bold text-navy-900">Mr. Jamshed Hussain</p>
+              <p className="mt-1 text-sm font-semibold text-accent-600">
+                Chairman, Human Rights Council of Pakistan (HRC-P)
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Content (right) */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <SectionHeader
+              align="left"
+              eyebrow="Chairman's Message"
+              title="Human Rights Council of Pakistan (HRC-Pakistan) Twin City"
+              className="mb-6"
+            />
+            <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
+              Mr. Jamshed Hussain serves as the Chairman of the Human Rights Council of
+              Pakistan (HRC-P), leading the organization with a strong commitment to human
+              rights, justice, and equality. Under his leadership, HRC-P works to promote
+              awareness, protect fundamental rights, and support vulnerable communities
+              across Pakistan. The Twin Cities Chapter (Islamabad–Rawalpindi) operates under
+              HRC-P to strengthen human rights initiatives at the local level. The chapter
+              actively engages youth, volunteers, and civil society in meaningful social and
+              humanitarian activities. Through collective efforts, HRC-P continues to advance
+              the values of dignity, justice, peace, and respect for all.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Sub Wings */}
       <section className="section-pad bg-navy-50/50">
         <div className="container-page">

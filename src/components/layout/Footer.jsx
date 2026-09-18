@@ -23,7 +23,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <img
-              src="/HRCP LOGO.png"
+              src="/twin city logo.jpeg"
               alt={settings.organizationName || 'Human Rights Council of Pakistan'}
               className="h-12 w-auto rounded-md bg-white object-contain p-0.5"
             />

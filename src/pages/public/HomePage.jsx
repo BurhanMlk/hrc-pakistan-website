@@ -177,6 +177,59 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* President message */}
+      <section className="section-pad bg-navy-50/50">
+        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
+          {/* Picture (left) */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
+          >
+            <div className="w-full max-w-sm overflow-hidden rounded-2xl border border-navy-100 bg-white p-2 shadow-soft">
+              <img
+                src="/President%20Murad%20Ali.jpeg"
+                alt="Mr. Murad Ali — President, Human Rights Council of Pakistan (HRC-P), Twin Cities Chapter"
+                className="h-auto w-full rounded-xl object-cover"
+              />
+            </div>
+            <div className="mt-5 text-center">
+              <p className="text-2xl font-bold text-navy-900">Mr. Murad Ali</p>
+              <p className="mt-1 text-sm font-semibold text-accent-600">
+                President, Human Rights Council of Pakistan (HRC-P), Twin Cities Chapter
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Content (right) */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <SectionHeader
+              align="left"
+              eyebrow="President's Message"
+              title="Human Rights Council of Pakistan (HRC-P) Twin Cities Chapter"
+              className="mb-6"
+            />
+            <p className="text-justify text-base leading-relaxed text-gray-600 sm:text-lg">
+              Mr. Murad Ali serves as the President of the Human Rights Council of Pakistan
+              (HRC-P), Twin Cities Chapter (Islamabad–Rawalpindi). He is committed to
+              promoting human rights, justice, equality, and social responsibility across the
+              Twin Cities. Under his leadership, the chapter works to raise awareness and
+              encourage meaningful community engagement. HRC-P Twin Cities brings together
+              youth, volunteers, and civil society to support humanitarian and human rights
+              initiatives. His vision is to build a more just, peaceful, and rights-conscious
+              society through collective action.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Sub Wings */}
       <section className="section-pad bg-navy-50/50">
         <div className="container-page">
